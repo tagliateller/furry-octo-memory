@@ -133,10 +133,8 @@
             	
 				<div class="col-md-9" style="margin-top: 2px;">
 
-		<h:form id="boaForm">
-			
-			<p:fieldset > 		
-								
+		<form id="boaForm">
+											
 				<div class="row">
 					<div class="col-md-12">
 						<span>Sehr geehrte Dame, sehr geehrter Herr,</span>
@@ -232,10 +230,8 @@
 						<span>* Pflichtfeld</span>
 					</div>
 				</div>
-            
-			</p:fieldset>
-			
-		</h:form>
+            			
+		</form>
 
 
 
@@ -292,7 +288,6 @@
     
     </div> <!-- ENDE container -->
   						
-  </h:body>
+  </body>
   
-</f:view>
 </html>
