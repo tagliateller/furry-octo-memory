@@ -1,0 +1,147 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+	  			xmlns:p="http://primefaces.org/ui"
+				template="/WEB-INF/layouts/berlin_de_mit_service.xhtml"
+				xmlns:itdz="http://java.sun.com/jsf/composite/itdz">
+				
+
+	<ui:define name="notes">
+		<itdz:notes/>
+	</ui:define>
+	
+	<ui:define name="verlauf">
+		<div class="row">
+			<div class="col-md-12">
+				<h:form id="verlaufForm">
+					<p:breadCrumb>
+						<p:menuitem value="Home" url="#" />    
+						<p:menuitem value="Anmeldung" url="#" />    
+					</p:breadCrumb>
+				</h:form>
+			</div>
+		</div>	
+	</ui:define>
+	
+	<ui:define name="content">
+
+		<h:form id="boaForm">
+			
+			<p:fieldset > 		
+								
+				<div class="row">
+					<div class="col-md-12">
+						<span>Sehr geehrte Dame, sehr geehrter Herr,</span>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-md-12">
+						<span>das Serviceangebot der Bußgeldstelle des Polizeipräsidenten in Berlin steht Ihnen gebührenfrei zur Verfügung. In wenigen Schritten können Sie Ihre Äußerungen zum Verkehrsordnungswidrigkeitenverfahren tätigen. Im Anschluss an die Übermittlung Ihrer Angaben erhalten Sie einen ausdruckbaren Nachweis für Ihre Unterlagen.</span>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-md-12">
+						<span>Bitte beachten Sie, dass die Ihnen im Anhörungsschreiben übermittelten Zugangsinformationen nur kurzfristig gültig sind.</span>
+					</div>
+				</div>
+
+				<div class="row" style="margin-top: 10px;">
+					<div class="col-md-7">
+						<span>Mit freundlichen Grüßen - Die Bußgeldstelle</span>
+					</div>
+					<div class="col-md-3" style="text-align: right;">
+						<span>Datum:</span>
+					</div>
+					<div class="col-md-2">
+						<span><h:outputText value="#{form.datum}"/></span>
+					</div>
+				</div>
+	
+				<hr />
+
+				<p:messages /> 
+
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Anmeldung</h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<span>Bitte geben Sie die Ihnen im Anhörungsschreiben übermittelten Zugangsinformationen in die nachfolgenden Felder ein und betätigen Sie anschließend die Schaltfläche "Anmeldung".</span>
+					</div>
+				</div>
+
+				<!-- 
+		        <div class="row">
+		          <div class="col-md-12">
+		            <ul>
+		              <li>privat/1234</li>
+		            </ul> 
+		          </div>          
+		        </div>
+          		-->
+          		
+				<div class="row">
+				
+					<div class="col-md-offset-4 col-md-4"> 						
+						<h:outputLabel for="username">Kennung *</h:outputLabel>
+						<br />
+						
+						<p:inputText id="username" name="username" 
+							label="Kennung *"
+							value="#{form.login.kennung}" required="false"
+							requiredMessage="Bitte geben Sie die Kennung ein" size="43"
+							maxlength="50" style="width: 100%;" />								
+					</div>
+				
+				</div>
+
+				<div class="row">
+				
+					<div class="col-md-offset-4 col-md-4"> 						
+						<h:outputLabel for="password">Passwort *</h:outputLabel>
+						<br />
+						<p:password id="password" name="password"
+						    label="Passwort *"
+							value="#{form.login.passwort}" required="false"
+							requiredMessage="Bitte geben Sie das Passwort ein" size="43"
+							maxlength="50" style="width: 100%;" />								
+					</div>
+				
+				</div>
+				
+				<p:panel id="pagebuttonbar" style="border: 0px;">
+				
+					<div class="row">
+					
+						<div class="col-md-offset-9 col-md-3"> 						
+	  
+	              			<p:commandButton id="login" action="login" value="Anmeldung" style="width: 100%;" update="@form"/>
+	              			
+	          			</div>
+	          
+	        		</div>
+            
+            	</p:panel>
+            	
+            	<p:blockUI block="pagebuttonbar" trigger="login" />
+            	
+				<div class="row">
+					<div class="col-md-12">
+						<span>* Pflichtfeld</span>
+					</div>
+				</div>
+            
+			</p:fieldset>
+			
+		</h:form>
+			
+	</ui:define> 
+
+</ui:composition>

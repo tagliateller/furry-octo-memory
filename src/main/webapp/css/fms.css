@@ -1,0 +1,450 @@
+body {
+    color: #3B3B3B;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+
+    background-color: #D3D3D3;
+    background-image: -moz-linear-gradient(center top , #ECECEC, #D3D3D3);
+    background-repeat: repeat-x;
+}
+
+img {
+    border: 0 none;
+    height: auto;
+    vertical-align: middle;
+}
+
+ul {
+    list-style: disc outside none;
+}
+
+ul, ol {
+    margin: 0 0 9px 25px;
+    padding: 0;
+}
+
+li {
+    line-height: 18px;	
+}
+
+p a, dd a, a.more {
+    background-image: url("../berlinonline/images/arrow_blue_tiny.png");
+    background-position: right 4px;
+    background-repeat: no-repeat;
+    margin-right: 1px;
+    padding-right: 10px;
+}
+
+a {
+    color: #003684;
+    text-decoration: none;
+}
+
+h1 {
+    color: #B5050E;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 23px;
+}
+
+h2 {
+    color: #B5050E;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+h3 {
+    color: #B5050E;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+.notes h3 {
+    color: #B5050E;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 3px;
+}
+
+.notes p {
+    color: #101010;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    line-height: 14px;
+}
+
+.page-header
+{
+    margin-top: 0px; /* überschreibt bootstrap.css */
+}
+
+.nav {
+    list-style: none outside none;
+}
+
+.fms-header
+{
+    position: relative;
+
+    background-color: #B2CAFF;
+    background-image: -moz-linear-gradient(center top , #C7D9FF, #B2CAFF);
+    background-repeat: repeat-x;
+
+    border-top: 5px solid #253276;
+    border-bottom: 1px solid #94ADCC;
+
+    height: 58px; /* von 53px abgeaendert*/
+
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.698);
+
+    margin-top: 0px; /* von vormals 20px */
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+    padding: 0 20px;
+	
+	max-width: 980px; /*maximale Breite */
+}
+
+.fms-header .red-line {
+    background-color: #E6001A;
+    height: 5px;
+    position: absolute;
+    right: 0;
+    top: -5px;
+    width: 320px;
+}
+
+.fms-header .fms-logo {
+    float: left;
+    margin: 7px 0;
+    width: 130px;
+}
+
+.fms-header .fms-navi {
+    display: block;
+    float: right;
+    margin: 0 10px 0 0;
+}
+
+.fms-header .fms-navi li {
+    display: block;
+    float: left;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.fms-content {
+    /*margin: 20px -20px 0;*/
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    overflow: visible;
+	max-width: 980px; /*maximale Breite */
+}
+	
+.fms-content-header {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.fms-content-header .section-logo.senatsverwaltung {
+    border-left: 7px solid #253276;
+    padding-left: 7px;
+	min-height: 68px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.fms-content-header .section-logo {
+    overflow: hidden;
+    background-image: url("../berlinonline/images/polizei-berlin.svg");
+    background-position: left bottom;
+    background-repeat: no-repeat;   
+    background-size: 165px 65px; 
+    padding-left: 75px;
+    min-height: 68px;
+	/*padding-top: 10px;
+	padding-bottom: 10px;*/
+}
+
+.fms-content-header .section-logo .institution {
+    color: #4C4C4C;
+    display: block;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.fms-content-header .section-logo .title {
+    color: #000000;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    padding-top: 38px;
+}
+
+.fms-content-navi-top {
+    background-image: url("../berlinonline/images/bg-amplitude-blue.gif");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    height: 35px;
+    /*margin-bottom: 20px;*/
+    /*overflow: visible;*/
+    /*
+    padding-top: 40px;*/ /* abweichend vom Original: Amplitude wird sonst nicht vollständig angezeigt */
+    /*padding-bottom: 20px;
+    position: relative;
+    z-index: 10;*/
+}
+/*
+.fms-content-navi-top ul.level1 {
+    display: block;
+    float: left;
+    left: 0;
+    margin: 0 10px 0 0;
+    position: relative;
+    width: 720px;
+}
+
+.fms-content-navi-top ul.level1 li {
+    display: block;
+    float: left;
+    height: 30px;
+    margin-right: 5px;
+    position: relative;
+}
+*/
+
+.fms-content-navi-top .beberlin {
+    position: absolute;
+    right: 25px;
+    top: -10px;
+}
+
+.fms-content-navi-top .beberlin .bb-logo {
+    background: url("../berlinonline/images/logo_beberlin_darkblue.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 30px;
+    overflow: hidden;
+    text-indent: -99999px;
+    width: 110px;
+}
+
+.fms-content-footer {
+    /*border-top: 1px solid #C6C6C6;*/
+    margin-top: -20px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 940px;
+    padding-top: 20px;
+    text-shadow: 0px 1px 1px rgb(255, 255, 255);
+    color: rgb(90, 90, 90);
+}
+
+.nav {
+    list-style: none outside none;
+}
+
+.fms-content-footer .nav li {
+    color: #9D9D9D;
+    display: block;
+    float: left;
+    font-weight: normal;
+    height: 32px;
+    min-height: 32px;
+    width: auto;
+}
+
+@media screen and (max-width:991px) {
+  .fms-content-footer {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+} 
+
+.icon-footer {
+    background-image: url("../berlinonline/images/sprite_footer.png");
+    background-repeat: no-repeat;
+    display: block;
+    min-height: 32px;
+    padding-left: 32px;
+}
+
+.icon-footer.icon-imprint_32 {
+    background-position: 0 4px;
+}
+
+.icon-footer.icon-totop {
+    background-position: 0 -76px;
+}
+
+.icon-footer.icon-printer_32 {
+    background-position: 0 -152px;
+}
+
+/* Label + Input */
+.fms-field-row {
+  	margin-top: 8px;
+  	/*position: relative;*/
+	/*font-size: 16px;*/
+	/*height: auto;*/
+	/*padding: 10px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+}
+
+.form-kita .form-control:focus {
+z-index: 2;
+}
+
+.form-kita input[type="text"] {
+margin-bottom: -1px;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+}
+.form-kita input[type="password"] {
+margin-bottom: 10px;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+
+/* Radiobutton mittig ankreuzen */
+.ui-radiobutton-icon {
+	margin-left:0px;
+	margin-top:-1px;
+}
+
+/* Hoehe des Radiobuttons in einer Zeile - scheinbar mittig- */
+.ui-radiobutton .ui-radiobutton-relative {
+	float: none;
+	background: #ffffff;
+}
+
+.fms-ueberschrift {
+    font-size: 100%;
+    color: white;
+    background-color: rgb(37, 50, 118);
+    /*position: absolute;*/
+    height: auto;
+    top: 5px;
+    padding: 5px 10px 11px;
+}
+
+.fms-ueberschrift-low {
+    font-size: 100%;
+    color: white;
+    background-color: rgb(17, 30, 108);
+    /*position: absolute;*/
+    height: auto;
+    top: 5px;
+    padding: 5px 10px 11px;
+}
+
+.ui-selectonemenu {
+     /*width: 100% !important;*/
+	 background-color: white;
+}
+
+.fms-verlauf {
+    color: rgb(39, 39, 39);
+    padding-left: 13px;
+    padding-right: 6px;
+    background-repeat: no-repeat;
+    display: inline-table;
+	margin: 0px;
+	/*position: absolute;*/
+	margin-top: -25px;
+	width: 100%;
+}
+
+.fms-verlauf-li {
+	/*float: left;*/
+	margin-right: 20px;
+    color: grey;
+	list-style-image: url("../berlinonline/images/arrow_blue_tiny.png");
+}
+
+li[class="fms-verlauf-li"]:first-child {
+	list-style:none;
+	font-weight: bold;
+}
+
+li[class="fms-verlauf-li fms-verlauf-active"]:first-child {
+	list-style:none;
+	font-weight: bold;
+}
+
+.fms-verlauf-active {
+	/*float: left;*/	
+    color: rgb(39, 39, 39) !important;
+	font-weight: bold;
+	list-style-image: url("../berlinonline/images/arrow_blue_tiny.png");	
+}
+
+.fms-progress-bar-inaktive {
+	color: rgb(30, 55, 123) !important;
+	background-color: rgb(245, 245, 245) !important;
+}
+
+label {
+    font-weight: normal;
+	margin-top: 5px;
+}
+
+.portallogin{
+		/*position: absolute;
+		float: right;*/
+		right:15px;	
+}
+
+/* überschreibt Schrift aus theme.css */
+.ui-widget {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/* überschreibt theme.css für breadcrumbs */
+.ui-widget-header a {
+    color: rgb(50, 50, 50);
+    font-weight: normal;
+    border: 0px solid rgb(255,255,255);
+}
+
+.ui-paginator-page {
+	color: rgb ( 0, 0, 0 );
+}
+
+.fms-vorgangsangaben-row {
+	background: #F8F8F8; 
+	border: solid 1px #BBBBBB; 
+	height: 100%;
+	min-height: 22px;
+	padding: 1px;
+	margin-top: 2px;
+}
+
+.fms-personenangaben-row {
+	font-weight: bold;
+	font-size: 0.8em;
+}
+
+.fms-accordion h3 {
+	border: solid 0px !important;
+}
+
+/* Ausblenden Border für Verlauf */
+div[id^=verlaufForm] {
+    border-color: white;
+}

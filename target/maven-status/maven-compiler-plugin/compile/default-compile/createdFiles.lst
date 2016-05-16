@@ -1,0 +1,4 @@
+org/openshift/mlbparks/mongo/DBConnection.class
+org/openshift/mlbparks/rest/MLBParkResource.class
+org/openshift/mlbparks/domain/MLBPark.class
+org/openshift/mlbparks/rest/JaxrsConfig.class

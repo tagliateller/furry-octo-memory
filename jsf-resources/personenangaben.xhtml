@@ -1,0 +1,104 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/layouts/berlin_de_menuless.xhtml"
+	xmlns:itdz="http://java.sun.com/jsf/composite/itdz">
+
+	<ui:define name="notes">
+	</ui:define>
+
+	<ui:define name="verlauf">
+		<div class="row">
+			<div class="col-md-9">
+				<h:form id="verlaufForm">
+					<p:breadCrumb>
+						<p:menuitem value="Home" url="#" />    
+						<p:menuitem value="Anmeldung" url="#" />    
+						<p:menuitem value="Personenangaben" url="#" />    
+					</p:breadCrumb>
+				</h:form>
+			</div>
+			<div class="col-md-3">
+			    <div style="margin-top: 6px;">
+				    <span style="font-size: 1.05em; vertical-align: middle;">AZ: #{form.user.headerSelected.akte.vorgang.langesAktenzeichen}</span>
+				</div>
+			</div>
+		</div>	
+	</ui:define>
+	
+	<ui:define name="content">
+
+		<h:form id="boaForm">
+			
+			<p:fieldset > 				
+				
+				<p:messages /> 
+		
+				<itdz:vorgangsangaben/>
+				
+				<hr/>
+				
+	          <div class="row">
+              <div class="col-md-8">
+			            <div class="row">
+							<div class="col-md-12 fms-personenangaben-row">
+								<span style="font-size: 1.1em;">Bitte tragen Sie auf der folgenden Seite die Angaben zur/zum Verantwortlichen für das Fahrzeug bzw. zur/zum Fahrzeugführer/in in die entsprechenden Felder ein.</span>
+							</div>
+						</div>		
+			      <div class="row">
+							<div class="col-md-12 fms-personenangaben-row">
+								<span style="font-size: 1.1em;">Ergänzen Sie bitte - wenn zutreffend - die Angaben zum gesetzlichen Vertreter.</span>
+							</div>
+						</div>		
+			      <div class="row">
+							<div class="col-md-12 fms-personenangaben-row">
+								<span style="font-size: 1.1em;">Für minderjährige Personen sind Angaben zum Erziehungsberechtigten als gesetzlicher Vertreter erforderlich.</span>
+							</div>
+						</div>		
+			      <div class="row">
+							<div class="col-md-12 fms-personenangaben-row">
+								<span style="font-size: 1.1em;">Bei den mit * gekennzeichneten Feldern handelt es sich um Pflichtangaben.</span>
+							</div>
+						</div>		
+			      <div class="row">
+							<div class="col-md-12 fms-personenangaben-row">
+								<span style="font-size: 1.1em;">Um die Online-Befragung abzubrechen, benutzen Sie bitte die Schaltfläche "Abbrechen". Alle bisher eingegebenen Informationen gehen verloren.</span>
+							</div>
+						</div>		
+			      <div class="row">
+							<div class="col-md-12 fms-personenangaben-row">
+								<span style="font-size: 1.1em; text-decoration: underline;">Bitte beachten Sie die Hinweise auf der Ihnen übersandten Anhörung.</span>
+							</div>
+						</div>		
+					</div>
+					<div class="col-md-4">
+						<img src="${request.contextPath}/berlinonline/images/kostenpunkte200.jpg"/>
+					</div>
+				</div>
+					
+				<hr />
+
+				<itdz:buttonBarPersonenangaben />
+
+            <!-- Wenn für 10 Minuten geidlet wird, dann diesen Dialog anzeigen -->
+            <p:idleMonitor timeout="600000" onidle="idleDialog.show()" />
+ 
+            <p:confirmDialog id="confirmDialog"
+                    message="Sie haben für mindestens 10 Minuten keine Eingaben getätigt. Wenn Sie erfasste Daten noch nicht gesendet haben, holen Sie dies bitte umgehend nach. Andernfalls ist ein Verlust der eingegebenen Daten möglich."
+                            header="Inaktivitätsüberwachung" severity="alert" widgetVar="idleDialog" width="500px">
+ 
+                <p:commandButton id="confirm" value="Ok" 
+                    oncomplete="idleDialog.hide()" /> 
+ 
+            </p:confirmDialog>
+
+			</p:fieldset>
+
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
