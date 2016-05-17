@@ -1,0 +1,34 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+	<cc:interface/>
+	
+	<cc:implementation>
+	
+		<p:panel id="pagebuttonbar" style="border: 0px;">
+	
+			<div class="row">
+			     <div class="col-md-3 col-sm-3 col-xs-12">	
+				<p:commandButton id="cancel" value="Abbrechen" style="width: 100%;" action="cancel" immediate="true">
+					<p:confirm header="Bestätigung" message="Wollen Sie wirklich die Datenerfassung abbrechen ?" icon="ui-icon-alert" />  
+				</p:commandButton>
+			     </div>			 
+				<div class="text-right col-md-offset-6 col-md-2 col-sm-2 col-xs-12">
+				  <p:commandButton id="next" action="next" value="Weiter" style="width: 100%;" update="@form"/>
+		             </div>		  
+			</div>
+					
+	 		<p:confirmDialog global="true" showEffect="fade" width="500px">  
+	        	<p:commandButton value="Ja" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-pin-s"/>  
+	        	<p:commandButton value="Nein" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>       
+	    	</p:confirmDialog>
+    	
+    	</p:panel>
+    				
+		<p:blockUI block="pagebuttonbar" trigger="next" />
+    				
+	</cc:implementation>
+	
+</ui:composition>

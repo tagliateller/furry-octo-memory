@@ -113,7 +113,6 @@
 		  <div class="row">
 				<div class="col-md-12">
 				    <div style="border: 1px solid #E3E3E3; border-radius: 4px;">
-            		  <ui:insert name="verlauf"/>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -133,7 +132,7 @@
             	
 				<div class="col-md-9" style="margin-top: 2px;">
 
-		<form id="boaForm">
+		<form id="boaForm" action="personenangaben.jsp" >
 											
 				<div class="row">
 					<div class="col-md-12">
@@ -216,7 +215,7 @@
 					
 						<div class="col-md-offset-9 col-md-3"> 						
 	  
-<button id="boaForm:login" name="boaForm:login" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="PrimeFaces.ab({source:'boaForm:login',update:'boaForm'});return false;" style="width: 100%;" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Anmeldung</span></button>	              			
+<button id="boaForm:login" name="boaForm:login" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" onclick="document.forms[0].action = 'personenangaben.jsp'; return true;" style="width: 100%;" type="submit" role="button" aria-disabled="false"><span class="ui-button-text ui-c">Anmeldung</span></button>	              			
 	          			</div>
 	          
 	        		</div>
@@ -239,7 +238,29 @@
             	</div>
             	<div class="col-md-3">
             		<div class="notes">
-	            		<ui:insert name="notes"/>
+		<h3 style="margin-top: 16px;">Bankverbindungen</h3>
+
+		<h3>Verwarnungsgelder, Bußgeld- und Kostenbescheide</h3>
+			
+		<p>Landeshauptkasse Berlin</p>
+		<p>International IBAN:</p>
+		<p>DE50100100100000082102</p>
+		<p>BIC: PBNKDEFFXXX</p>
+		
+		<hr/>
+
+		<h3>Kfz-Abschleppgebühren:</h3>
+
+		<p>Landeshauptkasse Berlin</p>
+		<p>International IBAN:</p>
+		<p>DE12100100100000137106</p>
+		<p>BIC: PBNKDEFFXXX</p>
+		
+		<p>Bei Zahlungen geben Sie bitte immer das Aktenzeichen bzw. das Kassenzeichen an.</p>
+
+		<hr/>
+		
+		<p>Weitere Informationen auf der <a target="_blank" href="http://www.berlin.de/polizei/aufgaben/bussgeldstelle/allgemeines/">Seite der Bußgeldstelle</a> ...</p>
             		</div>
             	</div>	
 			</div>

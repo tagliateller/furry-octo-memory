@@ -18,12 +18,7 @@
 
     <!-- Custom styles for this template -->
     <link href="<%=request.getContextPath()%>/css/fms.css" rel="stylesheet"/>
-	
-    <!--[if lt IE 9]>
-	<script src=&quot;<%=request.getContextPath()%>/assets/js/html5shiv.js&quot;&gt;&lt;/script&gt;
-	<script src=&quot;<%=request.getContextPath()%>/assets/js/respond.min.js&quot;&gt;&lt;/script&gt;
-    <![endif]-->
-	
+		
     <style>
 
 /* Down-Button bei Comboboxen - überschreibt primefaces */
@@ -46,6 +41,22 @@
 } 
             
     </style>
+
+    <script>
+      $(function() {
+        $("#dlg-foto1").dialog();
+      });
+      $(function() {
+        $("#dlg-foto2").dialog();
+      });
+      $(function() {
+        $("#dlg-foto3").dialog();
+      });
+      $(function() {
+        $("#dlg-foto4").dialog();
+      });
+
+    </script>
 
   <head>
   
@@ -138,7 +149,125 @@
 
 		<form id="boaForm">
 							
-				<itdz:vorgangsangaben/>
+<div id="dlg-foto1" title="Beweisfoto Nr. 1">
+<p><img src="<%=request.getContextPath()%>/fotos/foto1.png"/></p>
+</div>
+<div id="dlg-foto2" title="Beweisfoto Nr. 2">
+<p><img src="<%=request.getContextPath()%>/fotos/foto2.png"/></p>
+</div>
+<div id="dlg-foto3" title="Beweisfoto Nr. 3">
+<p><img src="<%=request.getContextPath()%>/fotos/foto3.png"/></p>
+</div>
+<div id="dlg-foto4" title="Beweisfoto Nr. 4">
+<p><img src="<%=request.getContextPath()%>/fotos/foto4.png"/></p>
+</div>
+
+
+							
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Betroffene(r)</h1>
+					</div>
+				</div>
+
+
+	            <div class="row">
+					<div class="col-md-8">
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Name:</span>	
+							</div>		            
+							<div class="col-md-10">	
+								<div class="fms-vorgangsangaben-row">Firma Mustermann &amp; Co GmbH</div>
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Straße:</span>	
+							</div>		            
+							<div class="col-md-10">	
+								<div class="fms-vorgangsangaben-row">Müllerstr. 1</div>    
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Ort:</span>	
+							</div>		            
+							<div class="col-md-10">	
+								<div class="fms-vorgangsangaben-row">13349 Berlin</div>	
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Kfz:</span>	
+							</div>		            
+							<div class="col-md-10">
+								<div class="fms-vorgangsangaben-row">	
+									<span>HVL-BB 341</span>
+								</div>		
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Tatzeit:</span>	
+							</div>		            
+							<div class="col-md-10">	
+								<div class="fms-vorgangsangaben-row">
+<span>02.05.2016 11:11 Uhr</span>								
+					            </div>    
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Tatort:</span>	
+							</div>		            
+							<div class="col-md-10">
+								<div class="fms-vorgangsangaben-row">	
+									<span>10117 Berlin, Unterbaumstr. ggü. Hnr. 4</span>	
+								</div>	
+							</div>		            
+			            </div>						
+					</div>
+					<div class="col-md-4">
+						
+<img src="<%=request.getContextPath()%>/fotos/foto1.png"/>
+<img src="<%=request.getContextPath()%>/fotos/foto2.png"/>
+<img src="<%=request.getContextPath()%>/fotos/foto3.png"/>
+<img src="<%=request.getContextPath()%>/fotos/foto4.png"/>
+
+							<p:commandLink id="showGalleria" onclick="PF('dlgGalleria').show()">
+								<p:galleria id="fotoGalleria" value="" var="foto" panelWidth="180" panelHeight="1"  
+								            frameWidth="48" frameHeight="48" effect="clip">  
+								  
+									<p:graphicImage id="fotoImage" value=""
+										alt="" title="" cache="false">
+										<f:param name="photo_id" value=""/>
+									</p:graphicImage>	
+								      
+								    <f:facet name="content">  
+								        <h:panelGrid  columns="2" cellpadding="5">  
+								            								             
+								        </h:panelGrid>  
+								    </f:facet>  
+								  
+								</p:galleria>  					
+							</p:commandLink>
+												
+					</div>
+					
+		        </div>		
+
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Tatvorwurf</h1>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="fms-vorgangsangaben-row">Sie parkten im Bereich eines Parkscheinautomaten ohne gültigen Parkschein.&lt;BR /&gt;§ 13 Abs. 1, 2, § 49 StVO; § 24 StVG; 63.1 BKat</div>
+					</div>
+				</div>
 				
 				<hr/>
 				
@@ -176,13 +305,32 @@
 						</div>		
 					</div>
 					<div class="col-md-4">
-						<img src="${request.contextPath}/berlinonline/images/kostenpunkte200.jpg"/>
+						<img src="<%=request.getContextPath()%>/berlinonline/images/kostenpunkte200.jpg"/>
 					</div>
 				</div>
 					
 				<hr />
 
-				<itdz:buttonBarPersonenangaben />
+		<p:panel id="pagebuttonbar" style="border: 0px;">
+	
+			<div class="row">
+			     <div class="col-md-3 col-sm-3 col-xs-12">	
+				<button id="cancel" value="Abbrechen" style="width: 100%;" action="cancel" immediate="true"/>
+			     </div>			 
+				<div class="text-right col-md-offset-6 col-md-2 col-sm-2 col-xs-12">
+				  <button id="next" action="next" value="Weiter" style="width: 100%;" update="@form"/>
+		             </div>		  
+			</div>
+					
+	 		<p:confirmDialog global="true" showEffect="fade" width="500px">  
+	        	<p:commandButton value="Ja" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-pin-s"/>  
+	        	<p:commandButton value="Nein" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>       
+	    	</p:confirmDialog>
+    	
+    	</p:panel>
+    				
+		<p:blockUI block="pagebuttonbar" trigger="next" />
+
 
 		</form>
 
@@ -191,7 +339,33 @@
             	</div>
             	<div class="col-md-3">
             		<div class="notes">
-	            		<ui:insert name="notes"/>
+
+		<h3 style="margin-top: 16px;">Bankverbindungen</h3>
+
+		<h3>Verwarnungsgelder, Bußgeld- und Kostenbescheide</h3>
+			
+		<p>Landeshauptkasse Berlin</p>
+		<p>International IBAN:</p>
+		<p>DE50100100100000082102</p>
+		<p>BIC: PBNKDEFFXXX</p>
+		
+		<hr/>
+
+		<h3>Kfz-Abschleppgebühren:</h3>
+
+		<p>Landeshauptkasse Berlin</p>
+		<p>International IBAN:</p>
+		<p>DE12100100100000137106</p>
+		<p>BIC: PBNKDEFFXXX</p>
+		
+		<p>Bei Zahlungen geben Sie bitte immer das Aktenzeichen bzw. das Kassenzeichen an.</p>
+
+		<hr/>
+		
+		<p>Weitere Informationen auf der <a target="_blank" href="http://www.berlin.de/polizei/aufgaben/bussgeldstelle/allgemeines/">Seite der Bußgeldstelle</a> ...</p>
+
+
+
             		</div>
             	</div>	
 			</div>

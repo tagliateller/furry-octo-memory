@@ -1,0 +1,159 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+	<cc:interface>
+	</cc:interface>
+	<cc:implementation>
+				<p:dialog id="galleriaDialog" header="Fotos" widgetVar="dlgGalleria" modal="true" height="480">
+				
+					<p:galleria id="fotoGalleriaDlg" value="#{form.user.headerSelected.akte.vorgang.fotos}"
+						var="foto" 
+						panelWidth="380" panelHeight="420" 
+						frameWidth="48" frameHeight="48" 
+						effect="clip">
+
+						<p:graphicImage id="fotoImageDlg" value="#{form.user.headerSelected.akte.vorgang.photo}"
+							alt="#{foto.alt}" title="#{foto.name}" cache="false">
+							<f:param name="photo_id" value="#{foto.number}"/>
+						</p:graphicImage>	
+
+						<f:facet name="content">
+							<h:panelGrid columns="2" cellpadding="5">
+
+								<p:graphicImage id="fotoImageAnz" value="#{form.user.headerSelected.akte.vorgang.photo}"
+									alt="#{foto.alt}" title="#{foto.name}" cache="false">
+									<f:param name="photo_id" value="#{foto.number}"/>
+								</p:graphicImage>
+									
+							</h:panelGrid>
+						</f:facet>
+
+					</p:galleria>
+					
+				</p:dialog>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Betroffene(r)</h1>
+					</div>
+				</div>
+
+	            <div class="row">
+					<div class="col-md-8">
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Name:</span>	
+							</div>		            
+							<div class="col-md-10">	
+								<div class="fms-vorgangsangaben-row">				                	
+				                  	<h:outputText value="#{form.user.headerSelected.akte.beteiligter}">
+				                  		<f:converter converterId="itdz.BeteiligterNameConverter"/>
+				                  	</h:outputText>	
+				                </div>
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Straße:</span>	
+							</div>		            
+							<div class="col-md-10">	
+								<div class="fms-vorgangsangaben-row">
+					                  <h:outputText value="#{form.user.headerSelected.akte.beteiligter}">
+						                <f:converter converterId="itdz.BeteiligterStrasseConverter"/>
+						              </h:outputText>  
+					            </div>    
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Ort:</span>	
+							</div>		            
+							<div class="col-md-10">	
+								<div class="fms-vorgangsangaben-row">
+               						<h:outputText value="#{form.user.headerSelected.akte.beteiligter}">
+	                					<f:converter converterId="itdz.BeteiligterOrtConverter"/>
+                					</h:outputText>
+                				</div>	
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Kfz:</span>	
+							</div>		            
+							<div class="col-md-10">
+								<div class="fms-vorgangsangaben-row">	
+									<span>#{form.user.headerSelected.akte.vorgang.kfzKennzeichen}</span>
+								</div>		
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Tatzeit:</span>	
+							</div>		            
+							<div class="col-md-10">	
+								<div class="fms-vorgangsangaben-row">								
+									<h:outputText value="#{form.user.headerSelected.akte.vorgang.tattag}"/>
+									<h:outputText value=" "/>
+									<h:outputText value="#{form.user.headerSelected.akte.vorgang.tatzeit}">
+										<f:converter converterId="itdz.UhrzeitConverter"/>
+									</h:outputText>	
+					            </div>    
+							</div>		            
+			            </div>						
+			            <div class="row">
+							<div class="col-md-2">
+								<span>Tatort:</span>	
+							</div>		            
+							<div class="col-md-10">
+								<div class="fms-vorgangsangaben-row">	
+									<span>#{form.user.headerSelected.akte.vorgang.tatort}</span>	
+								</div>	
+							</div>		            
+			            </div>						
+					</div>
+					<div class="col-md-4">
+						
+						<ui:fragment rendered="#{form.user.headerSelected.akte.vorgang.showFotos}">
+							<!-- Fotoanzeige -->
+							<p:commandLink id="showGalleria" onclick="PF('dlgGalleria').show()">
+								<p:galleria id="fotoGalleria" value="#{form.user.headerSelected.akte.vorgang.fotos}" var="foto" panelWidth="180" panelHeight="1"  
+								            frameWidth="48" frameHeight="48" effect="clip">  
+								  
+									<p:graphicImage id="fotoImage" value="#{form.user.headerSelected.akte.vorgang.photo}"
+										alt="#{foto.alt}" title="#{foto.name}" cache="false">
+										<f:param name="photo_id" value="#{foto.number}"/>
+									</p:graphicImage>	
+								      
+								    <f:facet name="content">  
+								        <h:panelGrid  columns="2" cellpadding="5">  
+								            								             
+								        </h:panelGrid>  
+								    </f:facet>  
+								  
+								</p:galleria>  					
+							</p:commandLink>
+						</ui:fragment>
+												
+					</div>
+					
+		        </div>		
+
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Tatvorwurf</h1>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<div class="fms-vorgangsangaben-row">
+							<h:outputText value="#{form.user.headerSelected.akte.vorgang.tatvorwurftext}" escape="false"/>
+						</div>
+					</div>
+				</div>
+	</cc:implementation>				
+</ui:composition>

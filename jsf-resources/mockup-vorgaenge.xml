@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:faces="http://www.springframework.org/schema/faces"
+       xsi:schemaLocation="
+       	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       	http://www.springframework.org/schema/faces http://www.springframework.org/schema/faces/spring-faces-2.2.xsd">
+<bean id="onlineZugang1" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+  <property name="kennung" value="02016711"/>
+  <property name="zugangscode" value="85e9ffe861d016c2218fa2f287f0d44c"/>
+</bean>
+<bean id="vorgang1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="02016711"/>
+  <property name="langesAktenzeichen" value="58.02.016711.3"/>
+  <property name="kfzKennzeichen" value="HVL-BB 741"/>
+  <property name="tatort" value="10117 Berlin, Unterbaumstr. ggü. Hnr. 4"/>
+  <property name="tattag" value="16.09.2014"/>
+  <property name="tatzeit" value="1009"/>
+</bean>
+<bean id="onlineZugang2" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+  <property name="kennung" value="03017485"/>
+  <property name="zugangscode" value="79f803dadac4dcaa002bfc20a2a56218"/>
+</bean>
+<bean id="vorgang2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="03017485"/>
+  <property name="langesAktenzeichen" value="58.03.017485.3"/>
+  <property name="kfzKennzeichen" value="LDS-LG 272"/>
+  <property name="tatort" value="10405 Bln.Pank Greifswalder St r 26 Ri Berliner Allee"/>
+  <property name="tattag" value="04.09.2014"/>
+  <property name="tatzeit" value="1537"/>
+</bean>
+<bean id="onlineZugang3" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+  <property name="kennung" value="10011690"/>
+  <property name="zugangscode" value="40689fa476f152de1867d3f285b5a3d8"/>
+</bean>
+<bean id="vorgang3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="10011690"/>
+  <property name="langesAktenzeichen" value="58.10.011690.3"/>
+  <property name="kfzKennzeichen" value="BZ-CS 737"/>
+  <property name="tatort" value="12487 Berlin BAB 113 Süd km 16,0 AS Johannisthaler Chaussee, Süd"/>
+  <property name="tattag" value="03.10.2014"/>
+  <property name="tatzeit" value="1529"/>
+</bean>
+<bean id="onlineZugang4" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+  <property name="kennung" value="02016686"/>
+  <property name="zugangscode" value="40983a4a6ce1b22cb95bb22228324132"/>
+</bean>
+<bean id="vorgang4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="02016686"/>
+  <property name="langesAktenzeichen" value="58.02.016686.3"/>
+  <property name="kfzKennzeichen" value="HVL-BB 741"/>
+  <property name="tatort" value="10117 Berlin, Unterbaumstr. ggü. Hnr. 4"/>
+  <property name="tattag" value="16.09.2014"/>
+  <property name="tatzeit" value="1009"/>
+</bean>
+<bean id="onlineZugang5" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+  <property name="kennung" value="02016692"/>
+  <property name="zugangscode" value="55d16c3e4465884e75dfffbdc5a44fc4"/>
+</bean>
+<bean id="vorgang5" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="02016692"/>
+  <property name="langesAktenzeichen" value="58.02.016692.3"/>
+  <property name="kfzKennzeichen" value="JU 66898"/>
+  <property name="tatort" value="12055 Berlin, Braunschweiger Str. an Ecke Wipperstr."/>
+  <property name="tattag" value="16.09.2014"/>
+  <property name="tatzeit" value="0918"/>
+</bean>
+<bean id="onlineZugang6" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+  <property name="kennung" value="03017478"/>
+  <property name="zugangscode" value="cf93638cb8144d948ee79cdf62a430a4"/>
+</bean>
+<bean id="vorgang6" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="03017478"/>
+  <property name="langesAktenzeichen" value="58.03.017478.3"/>
+  <property name="kfzKennzeichen" value="NB-WN 112"/>
+  <property name="tatort" value="10405 Bln.Pank Greifswalder St r 26 Ri Berliner Allee"/>
+  <property name="tattag" value="04.09.2014"/>
+  <property name="tatzeit" value="1544"/>
+</bean>
+<bean id="onlineZugang7" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+  <property name="kennung" value="10011683"/>
+  <property name="zugangscode" value="51a2034e89ffd3f6d5e070fc8a7128f9"/>
+</bean>
+<bean id="vorgang7" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="10011683"/>
+  <property name="langesAktenzeichen" value="58.10.011683.3"/>
+  <property name="kfzKennzeichen" value="B-ED 4162"/>
+  <property name="tatort" value="BAB 111 Ri. Süd, Höhe AS Flugh"/>
+  <property name="tattag" value="09.08.2014"/>
+  <property name="tatzeit" value="0046"/>
+</bean>
+<bean id="onlineZugang8" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+  <property name="kennung" value="03017519"/>
+  <property name="zugangscode" value="7b60ab8e0495b99195c41281d4b9ec3f"/>
+</bean>
+<bean id="vorgang8" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="03017519"/>
+  <property name="langesAktenzeichen" value="58.03.017519.3"/>
+  <property name="kfzKennzeichen" value="B-AD 2831"/>
+  <property name="tatort" value="13467 Bln  Rd. Heinsestr. 14/R i. Falkentaler Steig"/>
+  <property name="tattag" value="29.09.2014"/>
+  <property name="tatzeit" value="1510"/>
+</bean>
+<bean id="onlineZugang9" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+  <property name="kennung" value="03017495"/>
+  <property name="zugangscode" value="87c34211b1ecee9611d8813be3c2cf23"/>
+</bean>
+<bean id="vorgang9" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="03017495"/>
+  <property name="langesAktenzeichen" value="58.03.017495.3"/>
+  <property name="kfzKennzeichen" value="B-OO 9482"/>
+  <property name="tatort" value="13467 Bln  Rd. Heinsestr. 14/R i. Falkentaler Steig"/>
+  <property name="tattag" value="29.09.2014"/>
+  <property name="tatzeit" value="1459"/>
+</bean>
+<bean id="akte1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Header">
+  <property name="datensatzErledigt" value="false"/>
+  <property name="onlineZugang" ref="onlineZugang1"/>
+  <property name="vorgang" ref="vorgang1"/>
+</bean>
+<bean id="akte2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Header">
+  <property name="datensatzErledigt" value="false"/>
+  <property name="onlineZugang" ref="onlineZugang2"/>
+  <property name="vorgang" ref="vorgang2"/>
+</bean>
+<bean id="akte3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Header">
+  <property name="datensatzErledigt" value="false"/>
+  <property name="onlineZugang" ref="onlineZugang3"/>
+  <property name="vorgang" ref="vorgang3"/>
+</bean>
+<bean id="akte4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Header">
+  <property name="datensatzErledigt" value="false"/>
+  <property name="onlineZugang" ref="onlineZugang4"/>
+  <property name="vorgang" ref="vorgang4"/>
+</bean>
+<bean id="akte5" class="de.berlin.itdz.forms4itdz.boa.formbeans.Header">
+  <property name="datensatzErledigt" value="false"/>
+  <property name="onlineZugang" ref="onlineZugang5"/>
+  <property name="vorgang" ref="vorgang5"/>
+</bean>
+<bean id="akte6" class="de.berlin.itdz.forms4itdz.boa.formbeans.Header">
+  <property name="datensatzErledigt" value="false"/>
+  <property name="onlineZugang" ref="onlineZugang6"/>
+  <property name="vorgang" ref="vorgang6"/>
+</bean>
+<bean id="akte7" class="de.berlin.itdz.forms4itdz.boa.formbeans.Header">
+  <property name="datensatzErledigt" value="false"/>
+  <property name="onlineZugang" ref="onlineZugang7"/>
+  <property name="vorgang" ref="vorgang7"/>
+</bean>
+<bean id="akte8" class="de.berlin.itdz.forms4itdz.boa.formbeans.Header">
+  <property name="datensatzErledigt" value="false"/>
+  <property name="onlineZugang" ref="onlineZugang8"/>
+  <property name="vorgang" ref="vorgang8"/>
+</bean>
+<bean id="akte9" class="de.berlin.itdz.forms4itdz.boa.formbeans.Header">
+  <property name="datensatzErledigt" value="false"/>
+  <property name="onlineZugang" ref="onlineZugang9"/>
+  <property name="vorgang" ref="vorgang9"/>
+</bean>
+</beans>

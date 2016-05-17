@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:faces="http://www.springframework.org/schema/faces"
+       xsi:schemaLocation="
+       	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       	http://www.springframework.org/schema/faces http://www.springframework.org/schema/faces/spring-faces-2.2.xsd">
+																	
+	<!-- Mockup-Fotos -->
+	<!-- 
+	<bean id="foto1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Foto">
+		<property name="photo" value="/blitzerfotos/image1.jpeg"/>  
+		<property name="name" value="Blitzerfoto 1"/>  
+		<property name="alt" value="Blitzerfoto 1"/>  
+		<property name="number" value="1"/>
+		<property name="position" value="1"/>
+	</bean>
+
+	<bean id="foto2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Foto">
+		<property name="photo" value="/blitzerfotos/image2.jpeg"/>  
+		<property name="name" value="Blitzerfoto 2"/>  
+		<property name="alt" value="Blitzerfoto 2"/>  
+		<property name="number" value="2"/>
+		<property name="position" value="2"/>
+	</bean>
+
+	<bean id="foto3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Foto">
+		<property name="photo" value="/blitzerfotos/image3.jpeg"/>  
+		<property name="name" value="Blitzerfoto 3"/>  
+		<property name="alt" value="Blitzerfoto 3"/>  
+		<property name="number" value="3"/>
+		<property name="position" value="3"/>
+	</bean>
+
+	<bean id="foto4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Foto">
+		<property name="photo" value="/blitzerfotos/image4.jpeg"/>  
+		<property name="name" value="Blitzerfoto 3"/>  
+		<property name="alt" value="Blitzerfoto 3"/>  
+		<property name="number" value="4"/>
+		<property name="position" value="4"/>
+	</bean>
+						
+	<bean id="vorgang1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+
+		<property name="kfzKennzeichen" value="B-GR 1404"/>
+		<property name="tatort" value="12349 Berlin Buckower Damm / Gutschmidtstr./ Ri.: Britzer Damm"/>
+		<property name="tattag" value="25.05.2014"/>
+		<property name="tatzeit" value="1629"/>
+		<property name="aktenzeichen" value="03016161"/>
+		<property name="geldbusse" value=""/>
+		<property name="zeugen" value="Hr. Rätz ZSE V B 222"/>
+		<property name="beweismittel" value="Automatische Rotlichtkamera,Frontfoto"/>
+		<property name="verfahrensstand" value="OA"/>
+		<property name="tatvorwurftext" value="Sie missachteten das Rotlicht der Lichtzeichenanlage.&lt;BR /&gt;§ 37 Abs. 2, § 49 StVO; § 24 StVG; 132 BKat"/>
+		<property name="langesAktenzeichen" value="58.03.016161.9"/>
+
+		<property name="foto1" ref="foto1"/>
+		<property name="foto2" ref="foto2"/>
+		<property name="foto3" ref="foto3"/>
+		<property name="foto4" ref="foto4"/>
+		
+	</bean>
+
+	<bean id="beteiligter1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+
+		<property name="anrede" value="Firma"/>
+		<property name="vorname" value=""/>
+		<property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+		<property name="namenszusatz" value=""/>
+		<property name="strasse1" value="Müllerstraße"/>
+		<property name="hausnummer" value="59"/>
+		<property name="hausnummerZusatz" value=""/>
+		<property name="postleitzahl" value="13349"/>
+		<property name="wohnort" value="Berlin"/>
+		
+		<property name="geburtsdatum" value=""/>
+		<property name="geburtsname" value=""/>
+
+		<property name="nummer" value="16640"/>
+		<property name="geburtsort" value=""/>
+			
+	</bean>
+	
+	<bean id="zugang1" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+
+		<property name="kennung" value="03016161"/>
+		<property name="zugangscode" value="c1d18ec1e15852e5166fd93f7e60448c"/>
+		<property name="gueltigBis" value="2014-07-09 00.00.00.0000"/>
+		<property name="gueltigVon" value="2014-06-30 00.00.00.0000"/>
+
+	</bean>	
+	
+	<bean id="firmenzugang1" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+	
+		<property name="benutzername" value="Testbenutzer"/>
+	
+	</bean>
+	
+	<bean id="verwaltung1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+		<property name="ort" value="Berlin"/>
+		<property name="amt" value="und Bußgeldeinziehung"/>
+		<property name="name" value="Der Polizeipräsident in Berlin"/>
+		<property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+		<property name="hVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+		<property name="pLZ" value="12660"/>
+	</bean>
+
+	<bean id="sachbearbeiter1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+		<property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+		<property name="telefon" value="4664-995118"/>
+		<property name="name" value="Die Bußgeldstelle"/>
+	</bean>
+	
+	<bean id="akte1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+		
+		<property name="vorgang" ref="vorgang1"/>
+		<property name="onlineZugang" ref="zugang1"/>
+		<property name="onlineFirmenZugang" ref="firmenzugang1"/>
+		<property name="beteiligter" ref="beteiligter1"/>
+		<property name="verwaltung" ref="verwaltung1"/>
+		<property name="sachbearbeiter" ref="sachbearbeiter1"/>
+		
+		<property name="datensatzErledigt" value="nein"/>
+	
+	</bean>
+
+	<bean id="vorgang2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+
+		<property name="kfzKennzeichen" value="B-NH 8987"/>
+		<property name="tatort" value="12349 Berlin Buckower Damm / Gutschmidtstr./ Ri.: Britzer Damm"/>
+		<property name="tattag" value="22.05.2014"/>
+		<property name="tatzeit" value="2234"/>
+		<property name="aktenzeichen" value="03016177"/>
+		<property name="geldbusse" value=""/>
+		<property name="zeugen" value="Hr. Rätz ZSE V B 222"/>
+		<property name="beweismittel" value="Automatische Rotlichtkamera,Frontfoto"/>
+		<property name="verfahrensstand" value="OA"/>
+		<property name="tatvorwurftext" value="Sie missachteten das Rotlicht der Lichtzeichenanlage.&lt;BR /&gt;§ 37 Abs. 2, § 49 StVO; § 24 StVG; 132 BKat"/>
+		<property name="langesAktenzeichen" value="58.03.016161.9"/>
+
+		<property name="foto1" ref="foto1"/>
+		<property name="foto2" ref="foto2"/>
+		<property name="foto3" ref="foto3"/>
+		<property name="foto4" ref="foto4"/>
+	
+	</bean>
+
+	<bean id="beteiligter2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+
+		<property name="anrede" value="Firma"/>
+		<property name="vorname" value=""/>
+		<property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+		<property name="namenszusatz" value=""/>
+		<property name="strasse1" value="Müllerstraße"/>
+		<property name="hausnummer" value="59"/>
+		<property name="hausnummerZusatz" value=""/>
+		<property name="postleitzahl" value="13349"/>
+		<property name="wohnort" value="Berlin"/>
+		
+		<property name="geburtsdatum" value=""/>
+		<property name="geburtsname" value=""/>
+
+		<property name="nummer" value="16640"/>
+		<property name="geburtsort" value=""/>
+			
+	</bean>
+	
+	<bean id="zugang2" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+		<property name="zugangscode" value="97999fa7e89fd29a75085fc1c39fafc7"/>
+		<property name="kennung" value="03016177"/>
+		<property name="gueltigBis" value="2014-07-09 00.00.00.0000"/>
+		<property name="gueltigVon" value="2014-06-30 00.00.00.0000"/>
+	</bean>
+
+	<bean id="firmenzugang2" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+	
+		<property name="benutzername" value="Testbenutzer"/>
+	
+	</bean>
+
+	<bean id="verwaltung2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+		<property name="ort" value="Berlin"/>
+		<property name="amt" value="und Bußgeldeinziehung"/>
+		<property name="name" value="Der Polizeipräsident in Berlin"/>
+		<property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+		<property name="hVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+		<property name="pLZ" value="12660"/>
+	</bean>
+
+	<bean id="sachbearbeiter2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+		<property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+		<property name="telefon" value="4664-995118"/>
+		<property name="name" value="Die Bußgeldstelle"/>
+	</bean>
+	
+	<bean id="akte2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+		
+		<property name="vorgang" ref="vorgang2"/>
+		<property name="onlineZugang" ref="zugang2"/>
+		<property name="onlineFirmenZugang" ref="firmenzugang2"/>
+		<property name="beteiligter" ref="beteiligter2"/>
+		<property name="verwaltung" ref="verwaltung2"/>
+		<property name="sachbearbeiter" ref="sachbearbeiter2"/>
+		<property name="datensatzErledigt" value="nein"/>
+	
+	</bean>
+
+	<bean id="vorgang3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+
+		<property name="kfzKennzeichen" value="B-NH 8987"/>
+		<property name="tatort" value="12349 Berlin Buckower Damm / G utschmidtstr./ Ri.: Britzer Damm"/>
+		<property name="tattag" value="22.05.2014"/>
+		<property name="tatzeit" value="2234"/>
+		<property name="aktenzeichen" value="03016127"/>
+		<property name="geldbusse" value=""/>
+		<property name="zeugen" value="Hr. Rätz ZSE V B 222"/>
+		<property name="beweismittel" value="Automatische Rotlichtkamera,Frontfoto"/>
+		<property name="verfahrensstand" value="OA"/>
+		<property name="tatvorwurftext" value="Sie missachteten das Rotlicht der Lichtzeichenanlage.&lt;BR /&gt;§ 37 Abs. 2, § 49 StVO; § 24 StVG; 132 BKat"/>
+		<property name="langesAktenzeichen" value="58.03.016161.9"/>
+
+		<property name="foto1" ref="foto1"/>
+		<property name="foto2" ref="foto2"/>
+		<property name="foto3" ref="foto3"/>
+		<property name="foto4" ref="foto4"/>
+
+	</bean>
+	
+	<bean id="beteiligter3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+
+		<property name="anrede" value="Firma"/>
+		<property name="vorname" value=""/>
+		<property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+		<property name="namenszusatz" value=""/>
+		<property name="strasse1" value="Müllerstraße"/>
+		<property name="hausnummer" value="59"/>
+		<property name="hausnummerZusatz" value=""/>
+		<property name="postleitzahl" value="13349"/>
+		<property name="wohnort" value="Berlin"/>
+		
+		<property name="geburtsdatum" value=""/>
+		<property name="geburtsname" value=""/>
+
+		<property name="nummer" value="16640"/>
+		<property name="geburtsort" value=""/>
+			
+	</bean>
+	
+	<bean id="zugang3" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+		<property name="zugangscode" value="1f560008b934a6e025f2f1a997291b89"/>
+		<property name="kennung" value="03016127"/>
+		<property name="gueltigBis" value="2014-07-09 00.00.00.0000"/>
+		<property name="gueltigVon" value="2014-06-30 00.00.00.0000"/>
+	</bean>
+
+	<bean id="firmenzugang3" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+	
+		<property name="benutzername" value="Testbenutzer"/>
+	
+	</bean>
+
+	<bean id="verwaltung3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+		<property name="ort" value="Berlin"/>
+		<property name="amt" value="und Bußgeldeinziehung"/>
+		<property name="name" value="Der Polizeipräsident in Berlin"/>
+		<property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+		<property name="hVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+		<property name="pLZ" value="12660"/>
+	</bean>
+
+	<bean id="sachbearbeiter3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+		<property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+		<property name="telefon" value="4664-995118"/>
+		<property name="name" value="Die Bußgeldstelle"/>
+	</bean>
+
+	<bean id="akte3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+		
+		<property name="vorgang" ref="vorgang3"/>
+		<property name="onlineZugang" ref="zugang3"/>
+		<property name="onlineFirmenZugang" ref="firmenzugang3"/>
+		<property name="beteiligter" ref="beteiligter3"/>		
+		<property name="verwaltung" ref="verwaltung3"/>
+		<property name="sachbearbeiter" ref="sachbearbeiter3"/>
+		<property name="datensatzErledigt" value="nein"/>
+	
+	</bean>
+
+	<bean id="vorgang4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+
+		<property name="kfzKennzeichen" value="B-GR 1404"/>
+		<property name="tatort" value="12349 Berlin Buckower Damm / G utschmidtstr./ Ri.: Britzer Damm"/>
+		<property name="tattag" value="25.05.2014"/>
+		<property name="tatzeit" value="1629"/>
+		<property name="aktenzeichen" value="03016191"/>
+		<property name="geldbusse" value=""/>
+		<property name="zeugen" value="Hr. Rätz ZSE V B 222"/>
+		<property name="beweismittel" value="Automatische Rotlichtkamera,Frontfoto"/>
+		<property name="verfahrensstand" value="OA"/>
+		<property name="tatvorwurftext" value="Sie missachteten das Rotlicht der Lichtzeichenanlage.&lt;BR /&gt;§ 37 Abs. 2, § 49 StVO; § 24 StVG; 132 BKat"/>
+		<property name="langesAktenzeichen" value="58.03.016161.9"/>
+
+		<property name="foto1" ref="foto1"/>
+		<property name="foto2" ref="foto2"/>
+		<property name="foto3" ref="foto3"/>
+		<property name="foto4" ref="foto4"/>
+		
+	</bean>
+
+	<bean id="beteiligter4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+
+		<property name="anrede" value="Firma"/>
+		<property name="vorname" value=""/>
+		<property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+		<property name="namenszusatz" value=""/>
+		<property name="strasse1" value="Müllerstraße"/>
+		<property name="hausnummer" value="59"/>
+		<property name="hausnummerZusatz" value=""/>
+		<property name="postleitzahl" value="13349"/>
+		<property name="wohnort" value="Berlin"/>
+		
+		<property name="geburtsdatum" value=""/>
+		<property name="geburtsname" value=""/>
+
+		<property name="nummer" value="16640"/>
+		<property name="geburtsort" value=""/>
+			
+	</bean>
+
+	<bean id="zugang4" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineZugang">
+		<property name="zugangscode" value="3bc691def5a4a335eb3f565971600163"/>
+		<property name="kennung" value="03016191"/>
+		<property name="gueltigBis" value="2014-07-09 00.00.00.0000"/>
+		<property name="gueltigVon" value="2014-06-30 00.00.00.0000"/>
+	</bean>
+	
+	<bean id="firmenzugang4" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+	
+		<property name="benutzername" value="Testbenutzer"/>
+	
+	</bean>
+	
+	<bean id="verwaltung4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+		<property name="ort" value="Berlin"/>
+		<property name="amt" value="und Bußgeldeinziehung"/>
+		<property name="name" value="Der Polizeipräsident in Berlin"/>
+		<property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+		<property name="hVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+		<property name="pLZ" value="12660"/>
+	</bean>
+
+	<bean id="sachbearbeiter4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+		<property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+		<property name="telefon" value="4664-995118"/>
+		<property name="name" value="Die Bußgeldstelle"/>
+	</bean>
+	
+	<bean id="akte4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+		
+		<property name="vorgang" ref="vorgang4"/>
+		<property name="onlineZugang" ref="zugang4"/>
+		<property name="onlineFirmenZugang" ref="firmenzugang4"/>
+		<property name="beteiligter" ref="beteiligter4"/>	
+		<property name="verwaltung" ref="verwaltung4"/>
+		<property name="sachbearbeiter" ref="sachbearbeiter4"/>			
+		<property name="datensatzErledigt" value="nein"/>
+	
+	</bean>
+					
+	-->
+	
+	<import resource="mockup-vorgaenge.xml" />
+	<import resource="mockup-vorgaenge-details.xml" />
+							
+	<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="propertyEditorRegistrars">
+		  <list>
+		    <bean class="de.berlin.itdz.forms4itdz.boa.converter.BooleanGermanConverter"/>
+		    <bean class="de.berlin.itdz.forms4itdz.boa.converter.JodaDateTimeConverter"/>
+		  </list>  
+		</property>
+	</bean>
+				
+	<!-- Mockup-Firmenprofil -->
+	<bean id="firmenprofil" class="de.berlin.itdz.forms4itdz.boa.formbeans.Firmenzugang">
+	    
+	    <property name="passwort" value="e419eaa3d9a3352126e3cf91eb44938b" />
+		<property name="benutzername" value="maxfirma" />	
+		<property name="gueltigVon" value="20140627" />	
+		<property name="gueltigBis" value="99981231" />
+		<property name="emailadresse" value="chef@firma.de" />	
+		<property name="ansprechpartner" value="Max Firma" />	
+		    
+	</bean>
+	
+</beans>

@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:faces="http://www.springframework.org/schema/faces"
+       xsi:schemaLocation="
+       	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       	http://www.springframework.org/schema/faces http://www.springframework.org/schema/faces/spring-faces-2.2.xsd">
+<bean id="beteiligterdetails1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+  <property name="anrede" value="Firma"/>
+  <property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+  <property name="hausnummer" value="59"/>
+  <property name="postleitzahl" value="13349"/>
+  <property name="strasse1" value="Müllerstraße"/>
+  <property name="wohnort" value="Berlin"/>
+</bean>
+<bean id="onlineFirmenZugangdetails1" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+  <property name="benutzername" value="Testbenutzer"/>
+</bean>
+<bean id="sachbearbeiterdetails1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+  <property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+  <property name="name" value="schul09"/>
+  <property name="telefon" value="4664-995119"/>
+</bean>
+<bean id="verwaltungdetails1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+  <property name="HVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+  <property name="PLZ" value="12660"/>
+  <property name="amt" value="und Bußgeldeinziehung"/>
+  <property name="name" value="Der Polizeipräsident in Berlin"/>
+  <property name="ort" value="Berlin"/>
+  <property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+</bean>
+<bean id="vorgangdetails1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="02016711"/>
+  <property name="geldbusse" value="10,00 EUR"/>
+  <property name="kfzKennzeichen" value="HVL-BB 741"/>
+  <property name="langesAktenzeichen" value="58.02.016711.5"/>
+  <property name="tatort" value="10117 Berlin, Unterbaumstr. ggü. Hnr. 4"/>
+  <property name="tattag" value="16.09.2014"/>
+  <property name="tatvorwurftext" value="Sie parkten im Bereich eines Parkscheinautomaten ohne gültigen Parkschein.&lt;BR /&gt;§ 13 Abs. 1, 2, § 49 StVO; § 24 StVG; 63.1 BKat"/>
+  <property name="tatzeit" value="1009"/>
+  <property name="verfahrensstand" value="OV"/>
+  <property name="zeugen" value="ANGPRK GOLZ, C. BEZIRKSAMT MITTE ORDNUNGSAMT"/>
+</bean>
+<bean id="beteiligterdetails2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+  <property name="anrede" value="Firma"/>
+  <property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+  <property name="hausnummer" value="59"/>
+  <property name="postleitzahl" value="13349"/>
+  <property name="strasse1" value="Müllerstraße"/>
+  <property name="wohnort" value="Berlin"/>
+</bean>
+<bean id="onlineFirmenZugangdetails2" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+  <property name="benutzername" value="Testbenutzer"/>
+</bean>
+<bean id="sachbearbeiterdetails2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+  <property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+  <property name="name" value="schul02"/>
+  <property name="telefon" value="4664-995034"/>
+</bean>
+<bean id="verwaltungdetails2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+  <property name="HVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+  <property name="PLZ" value="12660"/>
+  <property name="amt" value="und Bußgeldeinziehung"/>
+  <property name="name" value="Der Polizeipräsident in Berlin"/>
+  <property name="ort" value="Berlin"/>
+  <property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+</bean>
+<bean id="vorgangdetails2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="03017485"/>
+  <property name="geldbusse" value="30,00 EUR"/>
+  <property name="kfzKennzeichen" value="LDS-LG 272"/>
+  <property name="langesAktenzeichen" value="58.03.017485.0"/>
+  <property name="tatort" value="10405 Bln.Pank Greifswalder St r 26 Ri Berliner Allee"/>
+  <property name="tattag" value="04.09.2014"/>
+  <property name="tatvorwurftext" value="Sie hatten während der Fahrt den vorgeschriebenen Sicherheitsgurt nicht angelegt.&lt;BR /&gt;§ 19 OWiG; § 21a Abs. 1, § 49 StVO; § 24 StVG; 100 BKat&lt;BR /&gt;&lt;BR /&gt;Sie überschritten die zulässige Höchstgeschwindigkeit innerhalb geschlossener Ortschaften um 7 km/h. Zulässige Geschwindigkeit: 30 km/h. Festgestellte Geschwindigkeit (nach Toleranzabzug): 37 km/h.&lt;BR /&gt;§ 41 Abs. 1 iVm Anlage 2, § 49 StVO; § 24 StVG; 11.3.1 BKat&lt;BR /&gt;&lt;BR /&gt;Die Ordnungswidrigkeiten wurden tateinheitlich (§ 19 OWiG) bewertet."/>
+  <property name="tatzeit" value="1537"/>
+  <property name="verfahrensstand" value="OV"/>
+  <property name="zeugen" value="John  PAng SOD Dir 1 ZA VKD 12 -"/>
+</bean>
+<bean id="beteiligterdetails3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+  <property name="anrede" value="Firma"/>
+  <property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+  <property name="hausnummer" value="59"/>
+  <property name="postleitzahl" value="13349"/>
+  <property name="strasse1" value="Müllerstraße"/>
+  <property name="wohnort" value="Berlin"/>
+</bean>
+<bean id="onlineFirmenZugangdetails3" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+  <property name="benutzername" value="Testbenutzer"/>
+</bean>
+<bean id="sachbearbeiterdetails3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+  <property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+  <property name="name" value="schul03"/>
+  <property name="telefon" value="4664-995119"/>
+</bean>
+<bean id="verwaltungdetails3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+  <property name="HVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+  <property name="PLZ" value="12660"/>
+  <property name="amt" value="und Bußgeldeinziehung"/>
+  <property name="name" value="Der Polizeipräsident in Berlin"/>
+  <property name="ort" value="Berlin"/>
+  <property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+</bean>
+<bean id="vorgangdetails3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="10011690"/>
+  <property name="beweismittel" value="Messung mit einem Geschwindigkeitsmessgerät,Frontfoto"/>
+  <property name="kfzKennzeichen" value="BZ-CS 737"/>
+  <property name="langesAktenzeichen" value="58.10.011690.0"/>
+  <property name="tatort" value="12487 Berlin BAB 113 Süd km 16,0 AS Johannisthaler Chaussee, Süd"/>
+  <property name="tattag" value="03.10.2014"/>
+  <property name="tatvorwurftext" value="Sie überschritten die zulässige Höchstgeschwindigkeit innerhalb geschlossener Ortschaften um 23 km/h. Zulässige Geschwindigkeit: 80 km/h. Festgestellte Geschwindigkeit (nach Toleranzabzug): 103 km/h.&lt;BR /&gt;§ 19 OWiG; § 41 Abs. 1 iVm Anlage 2, § 49 StVO; § 24 StVG; 11.3.4 BKat&lt;BR /&gt;&lt;BR /&gt;Sie benutzten als Führer des Kraftfahrzeugs verbotswidrig ein Mobil- oder Autotelefon, indem Sie hierfür das Mobiltelefon oder den Hörer des Autotelefons aufnahmen oder hielten.&lt;BR /&gt;§ 23 Abs. 1a, § 49 StVO; § 24 StVG; 246.1 BKat&lt;BR /&gt;&lt;BR /&gt;Die Ordnungswidrigkeiten wurden tateinheitlich (§ 19 OWiG) bewertet."/>
+  <property name="tatzeit" value="1529"/>
+  <property name="verfahrensstand" value="OA"/>
+  <property name="zeugen" value="Haß, POK, Dir ZA ZVkD 213"/>
+</bean>
+<bean id="beteiligterdetails4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+  <property name="anrede" value="Firma"/>
+  <property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+  <property name="hausnummer" value="59"/>
+  <property name="postleitzahl" value="13349"/>
+  <property name="strasse1" value="Müllerstraße"/>
+  <property name="wohnort" value="Berlin"/>
+</bean>
+<bean id="onlineFirmenZugangdetails4" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+  <property name="benutzername" value="Testbenutzer"/>
+</bean>
+<bean id="sachbearbeiterdetails4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+  <property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+  <property name="name" value="schul02"/>
+  <property name="telefon" value="4664-995034"/>
+</bean>
+<bean id="verwaltungdetails4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+  <property name="HVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+  <property name="PLZ" value="12660"/>
+  <property name="amt" value="und Bußgeldeinziehung"/>
+  <property name="name" value="Der Polizeipräsident in Berlin"/>
+  <property name="ort" value="Berlin"/>
+  <property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+</bean>
+<bean id="vorgangdetails4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="02016686"/>
+  <property name="geldbusse" value="10,00 EUR"/>
+  <property name="kfzKennzeichen" value="HVL-BB 741"/>
+  <property name="langesAktenzeichen" value="58.02.016686.8"/>
+  <property name="tatort" value="10117 Berlin, Unterbaumstr. ggü. Hnr. 4"/>
+  <property name="tattag" value="16.09.2014"/>
+  <property name="tatvorwurftext" value="Sie parkten im Bereich eines Parkscheinautomaten ohne gültigen Parkschein.&lt;BR /&gt;§ 13 Abs. 1, 2, § 49 StVO; § 24 StVG; 63.1 BKat"/>
+  <property name="tatzeit" value="1009"/>
+  <property name="verfahrensstand" value="OV"/>
+  <property name="zeugen" value="ANGPRK GOLZ, C. BEZIRKSAMT MITTE ORDNUNGSAMT"/>
+</bean>
+<bean id="beteiligterdetails5" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+  <property name="anrede" value="Firma"/>
+  <property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+  <property name="hausnummer" value="59"/>
+  <property name="postleitzahl" value="13349"/>
+  <property name="strasse1" value="Müllerstraße"/>
+  <property name="wohnort" value="Berlin"/>
+</bean>
+<bean id="onlineFirmenZugangdetails5" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+  <property name="benutzername" value="Testbenutzer"/>
+</bean>
+<bean id="sachbearbeiterdetails5" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+  <property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+  <property name="name" value="schul03"/>
+  <property name="telefon" value="4664-995119"/>
+</bean>
+<bean id="verwaltungdetails5" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+  <property name="HVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+  <property name="PLZ" value="12660"/>
+  <property name="amt" value="und Bußgeldeinziehung"/>
+  <property name="name" value="Der Polizeipräsident in Berlin"/>
+  <property name="ort" value="Berlin"/>
+  <property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+</bean>
+<bean id="vorgangdetails5" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="02016692"/>
+  <property name="beweismittel" value="Foto"/>
+  <property name="geldbusse" value="15,00 EUR"/>
+  <property name="kfzKennzeichen" value="JU 66898"/>
+  <property name="langesAktenzeichen" value="58.02.016692.2"/>
+  <property name="tatort" value="12055 Berlin, Braunschweiger Str. an Ecke Wipperstr."/>
+  <property name="tattag" value="16.09.2014"/>
+  <property name="tatvorwurftext" value="Sie parkten weniger als 5 Meter hinter der *)Kreuzung und behinderten (Fußgänger wurden behindert) dadurch Andere.&lt;BR /&gt;ERLÄUTERUNG: &lt;BR /&gt;Abbiegeverkehr&lt;BR /&gt;&lt;BR /&gt;Die Restbreite betrug (cm): 0&lt;BR /&gt;§ 19 OWiG; § 12 Abs. 3, § 1 Abs. 2, § 49 StVO; § 24 StVG; 54.1 BKat; § 19 OWiG&lt;BR /&gt;&lt;BR /&gt;Sie hielten verbotswidrig auf dem Gehweg.&lt;BR /&gt;ERLÄUTERUNG: Die Restbreite betrug (cm): 0&lt;BR /&gt;§ 12 Abs. 4, § 49 StVO; § 24 StVG; -- BKat&lt;BR /&gt;&lt;BR /&gt;Die Ordnungswidrigkeiten wurden tateinheitlich (§ 19 OWiG) bewertet."/>
+  <property name="tatzeit" value="0918"/>
+  <property name="verfahrensstand" value="OV"/>
+  <property name="zeugen" value="ANGAOD SATERNUS, G. BA NEUKOELLN ORDNUNGSAMT; ANGAOD RADTKE, M. BA NEUKOELLN ORDNUNGSAMT"/>
+</bean>
+<bean id="beteiligterdetails6" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+  <property name="anrede" value="Firma"/>
+  <property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+  <property name="hausnummer" value="59"/>
+  <property name="postleitzahl" value="13349"/>
+  <property name="strasse1" value="Müllerstraße"/>
+  <property name="wohnort" value="Berlin"/>
+</bean>
+<bean id="onlineFirmenZugangdetails6" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+  <property name="benutzername" value="Testbenutzer"/>
+</bean>
+<bean id="sachbearbeiterdetails6" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+  <property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+  <property name="name" value="schul11"/>
+  <property name="telefon" value="4664-995119"/>
+</bean>
+<bean id="verwaltungdetails6" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+  <property name="HVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+  <property name="PLZ" value="12660"/>
+  <property name="amt" value="und Bußgeldeinziehung"/>
+  <property name="name" value="Der Polizeipräsident in Berlin"/>
+  <property name="ort" value="Berlin"/>
+  <property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+</bean>
+<bean id="vorgangdetails6" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="03017478"/>
+  <property name="geldbusse" value="35,00 EUR"/>
+  <property name="kfzKennzeichen" value="NB-WN 112"/>
+  <property name="langesAktenzeichen" value="58.03.017478.8"/>
+  <property name="tatort" value="10405 Bln.Pank Greifswalder St r 26 Ri Berliner Allee"/>
+  <property name="tattag" value="04.09.2014"/>
+  <property name="tatvorwurftext" value="Sie überschritten die zulässige Höchstgeschwindigkeit innerhalb geschlossener Ortschaften um 18 km/h. Zulässige Geschwindigkeit: 30 km/h. Festgestellte Geschwindigkeit (nach Toleranzabzug): 48 km/h.&lt;BR /&gt;§ 41 Abs. 1 iVm Anlage 2, § 49 StVO; § 24 StVG; 11.3.3 BKat"/>
+  <property name="tatzeit" value="1544"/>
+  <property name="verfahrensstand" value="OV"/>
+  <property name="zeugen" value="John  PAng SOD Dir 1 ZA VKD 12 -"/>
+</bean>
+<bean id="beteiligterdetails7" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+  <property name="anrede" value="Firma"/>
+  <property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+  <property name="hausnummer" value="59"/>
+  <property name="postleitzahl" value="13349"/>
+  <property name="strasse1" value="Müllerstraße"/>
+  <property name="wohnort" value="Berlin"/>
+</bean>
+<bean id="onlineFirmenZugangdetails7" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+  <property name="benutzername" value="Testbenutzer"/>
+</bean>
+<bean id="sachbearbeiterdetails7" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+  <property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+  <property name="name" value="schul01"/>
+  <property name="telefon" value="4664-995118"/>
+</bean>
+<bean id="verwaltungdetails7" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+  <property name="HVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+  <property name="PLZ" value="12660"/>
+  <property name="amt" value="und Bußgeldeinziehung"/>
+  <property name="name" value="Der Polizeipräsident in Berlin"/>
+  <property name="ort" value="Berlin"/>
+  <property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+</bean>
+<bean id="vorgangdetails7" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="10011683"/>
+  <property name="beweismittel" value="Messung mit einem Geschwindigkeitsmessgerät,Frontfoto"/>
+  <property name="kfzKennzeichen" value="B-ED 4162"/>
+  <property name="langesAktenzeichen" value="58.10.011683.7"/>
+  <property name="tatort" value="BAB 111 Ri. Süd, Höhe AS Flugh"/>
+  <property name="tattag" value="09.08.2014"/>
+  <property name="tatvorwurftext" value="Sie überschritten die zulässige Höchstgeschwindigkeit innerhalb geschlossener Ortschaften um 38 km/h. Zulässige Geschwindigkeit: 60 km/h. Festgestellte Geschwindigkeit (nach Toleranzabzug): 98 km/h.&lt;BR /&gt;§ 25 Abs. 2a StVG; § 41 Abs. 1 iVm Anlage 2, § 49 StVO; § 24, § 25 StVG; 11.3.6 BKat; § 4 Abs. 1 BKatV"/>
+  <property name="tatzeit" value="0046"/>
+  <property name="verfahrensstand" value="OA"/>
+  <property name="zeugen" value="Merkel, PK, Dir ZA ZVkD 214"/>
+</bean>
+<bean id="beteiligterdetails8" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+  <property name="anrede" value="Firma"/>
+  <property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+  <property name="hausnummer" value="59"/>
+  <property name="postleitzahl" value="13349"/>
+  <property name="strasse1" value="Müllerstraße"/>
+  <property name="wohnort" value="Berlin"/>
+</bean>
+<bean id="onlineFirmenZugangdetails8" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+  <property name="benutzername" value="Testbenutzer"/>
+</bean>
+<bean id="sachbearbeiterdetails8" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+  <property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+  <property name="name" value="schul11"/>
+  <property name="telefon" value="4664-995119"/>
+</bean>
+<bean id="verwaltungdetails8" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+  <property name="HVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+  <property name="PLZ" value="12660"/>
+  <property name="amt" value="und Bußgeldeinziehung"/>
+  <property name="name" value="Der Polizeipräsident in Berlin"/>
+  <property name="ort" value="Berlin"/>
+  <property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+</bean>
+<bean id="vorgangdetails8" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="03017519"/>
+  <property name="beweismittel" value="Messung mit einem Geschwindigkeitsmessgerät,Frontfoto"/>
+  <property name="geldbusse" value="15,00 EUR"/>
+  <property name="kfzKennzeichen" value="B-AD 2831"/>
+  <property name="langesAktenzeichen" value="58.03.017519.9"/>
+  <property name="tatort" value="13467 Bln  Rd. Heinsestr. 14/R i. Falkentaler Steig"/>
+  <property name="tattag" value="29.09.2014"/>
+  <property name="tatvorwurftext" value="Sie überschritten die zulässige Höchstgeschwindigkeit innerhalb geschlossener Ortschaften um 6 km/h. Zulässige Geschwindigkeit: 30 km/h. Festgestellte Geschwindigkeit (nach Toleranzabzug): 36 km/h.&lt;BR /&gt;§ 41 Abs. 1 iVm Anlage 2, § 49 StVO; § 24 StVG; 11.3.1 BKat"/>
+  <property name="tatzeit" value="1510"/>
+  <property name="verfahrensstand" value="OV"/>
+  <property name="zeugen" value="Walter PAng SOD Dir 1 ZA VKD -"/>
+</bean>
+<bean id="beteiligterdetails9" class="de.berlin.itdz.forms4itdz.boa.formbeans.Beteiligter">
+  <property name="anrede" value="Firma"/>
+  <property name="familienname1" value="Mustermann GmbH &amp; Co KG"/>
+  <property name="hausnummer" value="59"/>
+  <property name="postleitzahl" value="13349"/>
+  <property name="strasse1" value="Müllerstraße"/>
+  <property name="wohnort" value="Berlin"/>
+</bean>
+<bean id="onlineFirmenZugangdetails9" class="de.berlin.itdz.forms4itdz.boa.formbeans.OnlineFirmenZugang">
+  <property name="benutzername" value="Testbenutzer"/>
+</bean>
+<bean id="sachbearbeiterdetails9" class="de.berlin.itdz.forms4itdz.boa.formbeans.Sachbearbeiter">
+  <property name="emailAdresse" value="Bussgeldstelle@bowi.berlin.de"/>
+  <property name="name" value="schul06"/>
+  <property name="telefon" value="4664-995119"/>
+</bean>
+<bean id="verwaltungdetails9" class="de.berlin.itdz.forms4itdz.boa.formbeans.Verwaltung">
+  <property name="HVB" value="Referat Verkehrsordnungswidrigkeiten"/>
+  <property name="PLZ" value="12660"/>
+  <property name="amt" value="und Bußgeldeinziehung"/>
+  <property name="name" value="Der Polizeipräsident in Berlin"/>
+  <property name="ort" value="Berlin"/>
+  <property name="strasse" value="&lt;B&gt;Postanschrift&lt;/B&gt;"/>
+</bean>
+<bean id="vorgangdetails9" class="de.berlin.itdz.forms4itdz.boa.formbeans.Vorgang">
+  <property name="aktenzeichen" value="03017495"/>
+  <property name="beweismittel" value="Messung mit einem Geschwindigkeitsmessgerät,Frontfoto"/>
+  <property name="kfzKennzeichen" value="B-OO 9482"/>
+  <property name="langesAktenzeichen" value="58.03.017495.8"/>
+  <property name="tatort" value="13467 Bln  Rd. Heinsestr. 14/R i. Falkentaler Steig"/>
+  <property name="tattag" value="29.09.2014"/>
+  <property name="tatvorwurftext" value="Sie benutzten als Führer des Kraftfahrzeugs verbotswidrig ein Mobil- oder Autotelefon, indem Sie hierfür das Mobiltelefon oder den Hörer des Autotelefons aufnahmen oder hielten.&lt;BR /&gt;§ 19 OWiG; § 23 Abs. 1a, § 49 StVO; § 24 StVG; 246.1 BKat&lt;BR /&gt;&lt;BR /&gt;Sie überschritten die zulässige Höchstgeschwindigkeit innerhalb geschlossener Ortschaften um 15 km/h. Zulässige Geschwindigkeit: 30 km/h. Festgestellte Geschwindigkeit (nach Toleranzabzug): 45 km/h.&lt;BR /&gt;§ 41 Abs. 1 iVm Anlage 2, § 49 StVO; § 24 StVG; 11.3.2 BKat&lt;BR /&gt;&lt;BR /&gt;Die Ordnungswidrigkeiten wurden tateinheitlich (§ 19 OWiG) bewertet."/>
+  <property name="tatzeit" value="1459"/>
+  <property name="verfahrensstand" value="OA"/>
+  <property name="zeugen" value="Walter PAng SOD Dir 1 ZA VKD -"/>
+</bean>
+<bean id="aktedetails1" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+  <property name="beteiligter" ref="beteiligterdetails1"/>
+  <property name="onlineFirmenZugang" ref="onlineFirmenZugangdetails1"/>
+  <property name="sachbearbeiter" ref="sachbearbeiterdetails1"/>
+  <property name="verwaltung" ref="verwaltungdetails1"/>
+  <property name="vorgang" ref="vorgangdetails1"/>
+</bean>
+<bean id="aktedetails2" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+  <property name="beteiligter" ref="beteiligterdetails2"/>
+  <property name="onlineFirmenZugang" ref="onlineFirmenZugangdetails2"/>
+  <property name="sachbearbeiter" ref="sachbearbeiterdetails2"/>
+  <property name="verwaltung" ref="verwaltungdetails2"/>
+  <property name="vorgang" ref="vorgangdetails2"/>
+</bean>
+<bean id="aktedetails3" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+  <property name="beteiligter" ref="beteiligterdetails3"/>
+  <property name="onlineFirmenZugang" ref="onlineFirmenZugangdetails3"/>
+  <property name="sachbearbeiter" ref="sachbearbeiterdetails3"/>
+  <property name="verwaltung" ref="verwaltungdetails3"/>
+  <property name="vorgang" ref="vorgangdetails3"/>
+</bean>
+<bean id="aktedetails4" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+  <property name="beteiligter" ref="beteiligterdetails4"/>
+  <property name="onlineFirmenZugang" ref="onlineFirmenZugangdetails4"/>
+  <property name="sachbearbeiter" ref="sachbearbeiterdetails4"/>
+  <property name="verwaltung" ref="verwaltungdetails4"/>
+  <property name="vorgang" ref="vorgangdetails4"/>
+</bean>
+<bean id="aktedetails5" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+  <property name="beteiligter" ref="beteiligterdetails5"/>
+  <property name="onlineFirmenZugang" ref="onlineFirmenZugangdetails5"/>
+  <property name="sachbearbeiter" ref="sachbearbeiterdetails5"/>
+  <property name="verwaltung" ref="verwaltungdetails5"/>
+  <property name="vorgang" ref="vorgangdetails5"/>
+</bean>
+<bean id="aktedetails6" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+  <property name="beteiligter" ref="beteiligterdetails6"/>
+  <property name="onlineFirmenZugang" ref="onlineFirmenZugangdetails6"/>
+  <property name="sachbearbeiter" ref="sachbearbeiterdetails6"/>
+  <property name="verwaltung" ref="verwaltungdetails6"/>
+  <property name="vorgang" ref="vorgangdetails6"/>
+</bean>
+<bean id="aktedetails7" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+  <property name="beteiligter" ref="beteiligterdetails7"/>
+  <property name="onlineFirmenZugang" ref="onlineFirmenZugangdetails7"/>
+  <property name="sachbearbeiter" ref="sachbearbeiterdetails7"/>
+  <property name="verwaltung" ref="verwaltungdetails7"/>
+  <property name="vorgang" ref="vorgangdetails7"/>
+</bean>
+<bean id="aktedetails8" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+  <property name="beteiligter" ref="beteiligterdetails8"/>
+  <property name="onlineFirmenZugang" ref="onlineFirmenZugangdetails8"/>
+  <property name="sachbearbeiter" ref="sachbearbeiterdetails8"/>
+  <property name="verwaltung" ref="verwaltungdetails8"/>
+  <property name="vorgang" ref="vorgangdetails8"/>
+</bean>
+<bean id="aktedetails9" class="de.berlin.itdz.forms4itdz.boa.formbeans.Akte">
+  <property name="beteiligter" ref="beteiligterdetails9"/>
+  <property name="onlineFirmenZugang" ref="onlineFirmenZugangdetails9"/>
+  <property name="sachbearbeiter" ref="sachbearbeiterdetails9"/>
+  <property name="verwaltung" ref="verwaltungdetails9"/>
+  <property name="vorgang" ref="vorgangdetails9"/>
+</bean>
+</beans>
