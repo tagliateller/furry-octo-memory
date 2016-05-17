@@ -253,7 +253,7 @@
 
 		<p>Landeshauptkasse Berlin</p>
 		<p>International IBAN:</p>
-		<p>DE12100100100000137106</p>
+		<p>DE12100100100000137107</p>
 		<p>BIC: PBNKDEFFXXX</p>
 		
 		<p>Bei Zahlungen geben Sie bitte immer das Aktenzeichen bzw. das Kassenzeichen an.</p>
