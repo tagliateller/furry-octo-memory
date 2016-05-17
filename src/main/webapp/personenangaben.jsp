@@ -1,5 +1,110 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
+<%@ page import="java.io.BufferedReader" %>
+<%@ page import="java.io.InputStreamReader" %>
+<%@ page import="java.io.ByteArrayOutputStream" %>
+<%@ page import="java.io.InputStream" %>
+<%@ page import="java.io.File" %>
+<%@ page import="java.net.URL" %>
+<%@ page import="java.net.UnknownHostException" %>
+
+<%@ page import="com.mongodb.DB" %>
+<%@ page import="com.mongodb.DBCollection" %>
+<%@ page import="com.mongodb.DBObject" %>
+<%@ page import="com.mongodb.BasicDBObject" %>
+<%@ page import="com.mongodb.Mongo" %>
+<%@ page import="com.mongodb.util.JSON" %>
+
+<%! DB mongoDB = null; %>
+
+<%
+	String mongoHost = (System.getenv("MONGODB_SERVICE_HOST") == null) ? "127.0.0.1" : System.getenv("MONGODB_SERVICE_HOST");
+	String mongoPort = (System.getenv("MONGODB_SERVICE_PORT") == null) ? "27017" : System.getenv("MONGODB_SERVICE_PORT"); 
+	String mongoUser = (System.getenv("MONGODB_USER")== null) ? "boaportal" : System.getenv("MONGODB_USER");
+	String mongoPassword = (System.getenv("MONGODB_PASSWORD") == null) ? "boaportal" : System.getenv("MONGODB_PASSWORD");
+	String mongoDBName = (System.getenv("MONGODB_DATABASE") == null) ? "boaportal" : System.getenv("MONGODB_DATABASE");
+	// Check if we are using a mongoDB template or mongodb RHEL 7 image
+	if (mongoHost == null) {
+		mongoHost = System.getenv("MONGODB_24_RHEL7_SERVICE_HOST");
+	} 
+	if (mongoPort == null) {
+		mongoPort = System.getenv("MONGODB_24_RHEL7_SERVICE_PORT");
+	}
+		
+	int port = Integer.decode(mongoPort);
+	boolean dbFailed = false;
+	
+	Mongo mongo = null;
+	try {
+		mongo = new Mongo(mongoHost, port);
+		System.out.println("Connected to database " + mongoHost + " " + port + " " + mongoDBName );
+	} catch (UnknownHostException e) {
+		System.out.println("Couldn't connect to MongoDB: " + e.getMessage() + " :: " + e.getClass() + " with " + mongoHost + ":" + port + " " + mongoUser + " " + mongoPassword );
+		dbFailed = true;
+	}
+	
+	if ( !dbFailed ) {
+	
+	mongoDB = mongo.getDB(mongoDBName);
+	
+	if (mongoDB.authenticate(mongoUser, mongoPassword.toCharArray()) == false) {
+		System.out.println("Failed to authenticate DB with " + mongoUser + " " + mongoPassword );
+		dbFailed = true;
+	}
+	
+	if ( !dbFailed ) {
+
+	DBCollection fotosCollection = mongoDB.getCollection("fotos");
+	int fotosImported = 0;
+	if (fotosCollection.count() < 1) {
+	   System.out.println("The database is empty.  We need to populate it");
+	   try {
+	       File file = new File (request.getSession().getServletContext().getRealPath(request.getServletPath()));
+	       String path = file.getParentFile().getName();
+	       path += "/fotos/";
+	       System.out.println ( "get fotos from path: " + path );
+
+	       byte buf[] = new byte[4096];
+	       ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	       InputStream is = this.getClass().getClassLoader().getResourceAsStream ( "fotos/foto1.png" );
+	       while ( is.available() > 0 )
+	       {
+			int len = is.read(buf);
+			baos.write ( buf, 0, len );
+	       }
+	       is.close();
+	       baos.close();
+
+       	       byte imageBytes[] = baos.toByteArray();
+	       
+	       System.out.println ( "Image foto1 mit " + imageBytes.length + " geladen." );
+
+	       DBObject doc1 = new BasicDBObject("foto1", 1);
+	       doc1.put("fileName", "foto1");
+	       doc1.put("size", imageBytes.length);
+	       doc1.put("data", imageBytes);
+	       
+	       fotosCollection.insert ( doc1 );
+
+	       //BufferedReader in = new BufferedReader(new InputStream 
+	       //String currentLine = new String();
+	       //URL jsonFile = new URL("https://raw.githubusercontent.com/gshipley/openshift3mlbparks/master/mlbparks.json");
+	       //BufferedReader in = new BufferedReader(new InputStreamReader(jsonFile.openStream()));
+	       //while ((currentLine = in.readLine()) != null) {
+	       //	     parkListCollection.insert((DBObject) JSON.parse(currentLine.toString()));
+	//	     fotosImported++;
+	       //}
+	       System.out.println("Successfully imported " + fotosImported + " fotos.");
+
+	   } catch (Exception e) {
+	     e.printStackTrace();
+	   }
+	}
+	}
+	}
+
+%>
+
 <html>
   <head>
 
@@ -8,6 +113,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
+
+	  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/jquery-ui.css"/>
+	      
+      <script type="text/javascript" src="<%=request.getContextPath()%>/scripts/jquery-1.8.2.js"></script>
+      <script type="text/javascript" src="<%=request.getContextPath()%>/scripts/jquery-ui.js"></script>
     
     <link rel="shortcut icon" href="<%=request.getContextPath()%>/assets/ico/favicon.ico"/>
     
@@ -43,17 +153,78 @@
     </style>
 
     <script>
+
       $(function() {
-        $("#dlg-foto1").dialog();
+
+          $( "#dlg-foto1" ).dialog({
+        	  autoOpen: false,
+              resizable: false,
+              height:"auto",
+              width:420,
+              modal: true,
+              buttons: {
+                  "Schließen": function() {
+                      $( this ).dialog( "close" );
+                  }
+              }
+          });
+
+          $( "#dlg-foto2" ).dialog({
+        	  autoOpen: false,
+              resizable: false,
+              height:"auto",
+              width:420,
+              modal: true,
+              buttons: {
+                  "Schließen": function() {
+                      $( this ).dialog( "close" );
+                  }
+              }
+          });
+
+          $( "#dlg-foto3" ).dialog({
+        	  autoOpen: false,
+              resizable: false,
+              height:"auto",
+              width:420,
+              modal: true,
+              buttons: {
+                  "Schließen": function() {
+                      $( this ).dialog( "close" );
+                  }
+              }
+          });
+
+          $( "#dlg-foto4" ).dialog({
+        	  autoOpen: false,
+              resizable: false,
+              height:"auto",
+              width:420,
+              modal: true,
+              buttons: {
+                  "Schließen": function() {
+                      $( this ).dialog( "close" );
+                  }
+              }
+          });
+          
       });
-      $(function() {
-        $("#dlg-foto2").dialog();
-      });
-      $(function() {
-        $("#dlg-foto3").dialog();
-      });
-      $(function() {
-        $("#dlg-foto4").dialog();
+      
+      $(document).ready(function() {
+    	  
+	      $( "#dlg-foto1-open" ).click(function(ev) {
+	   		$( "#dlg-foto1" ).dialog( "open" );
+	      });
+	      $( "#dlg-foto2-open" ).click(function(ev) {
+	   		$( "#dlg-foto2" ).dialog( "open" );
+	      });
+	      $( "#dlg-foto3-open" ).click(function(ev) {
+	   		$( "#dlg-foto3" ).dialog( "open" );
+	      });
+	      $( "#dlg-foto4-open" ).click(function(ev) {
+	   		$( "#dlg-foto4" ).dialog( "open" );
+	      });
+	
       });
 
     </script>
@@ -150,16 +321,20 @@
 		<form id="boaForm">
 							
 <div id="dlg-foto1" title="Beweisfoto Nr. 1">
-<p><img src="<%=request.getContextPath()%>/fotos/foto1.png"/></p>
+<h2>Beweisfoto Nr. 1</h2>
+<p><img src="<%=request.getContextPath()%>/fotos/foto1.jpg"/></p>
 </div>
 <div id="dlg-foto2" title="Beweisfoto Nr. 2">
-<p><img src="<%=request.getContextPath()%>/fotos/foto2.png"/></p>
+<h2>Beweisfoto Nr. 1</h2>
+<p><img src="<%=request.getContextPath()%>/fotos/foto2.jpg"/></p>
 </div>
 <div id="dlg-foto3" title="Beweisfoto Nr. 3">
-<p><img src="<%=request.getContextPath()%>/fotos/foto3.png"/></p>
+<h2>Beweisfoto Nr. 1</h2>
+<p><img src="<%=request.getContextPath()%>/fotos/foto3.jpg"/></p>
 </div>
 <div id="dlg-foto4" title="Beweisfoto Nr. 4">
-<p><img src="<%=request.getContextPath()%>/fotos/foto4.png"/></p>
+<h2>Beweisfoto Nr. 1</h2>
+<p><img src="<%=request.getContextPath()%>/fotos/foto4.jpg"/></p>
 </div>
 
 
@@ -178,7 +353,7 @@
 								<span>Name:</span>	
 							</div>		            
 							<div class="col-md-10">	
-								<div class="fms-vorgangsangaben-row">Firma Mustermann &amp; Co GmbH</div>
+								<div class="fms-vorgangsangaben-row" style="height: 22px;">Firma Mustermann &amp; Co GmbH</div>
 							</div>		            
 			            </div>						
 			            <div class="row">
@@ -186,7 +361,7 @@
 								<span>Straße:</span>	
 							</div>		            
 							<div class="col-md-10">	
-								<div class="fms-vorgangsangaben-row">Müllerstr. 1</div>    
+								<div class="fms-vorgangsangaben-row" style="height: 22px;">Müllerstr. 1</div>    
 							</div>		            
 			            </div>						
 			            <div class="row">
@@ -194,7 +369,7 @@
 								<span>Ort:</span>	
 							</div>		            
 							<div class="col-md-10">	
-								<div class="fms-vorgangsangaben-row">13349 Berlin</div>	
+								<div class="fms-vorgangsangaben-row" style="height: 22px;">13349 Berlin</div>	
 							</div>		            
 			            </div>						
 			            <div class="row">
@@ -202,7 +377,7 @@
 								<span>Kfz:</span>	
 							</div>		            
 							<div class="col-md-10">
-								<div class="fms-vorgangsangaben-row">	
+								<div class="fms-vorgangsangaben-row" style="height: 22px;">	
 									<span>HVL-BB 341</span>
 								</div>		
 							</div>		            
@@ -212,7 +387,7 @@
 								<span>Tatzeit:</span>	
 							</div>		            
 							<div class="col-md-10">	
-								<div class="fms-vorgangsangaben-row">
+								<div class="fms-vorgangsangaben-row" style="height: 22px;">
 <span>02.05.2016 11:11 Uhr</span>								
 					            </div>    
 							</div>		            
@@ -222,7 +397,7 @@
 								<span>Tatort:</span>	
 							</div>		            
 							<div class="col-md-10">
-								<div class="fms-vorgangsangaben-row">	
+								<div class="fms-vorgangsangaben-row" style="height: 22px;">	
 									<span>10117 Berlin, Unterbaumstr. ggü. Hnr. 4</span>	
 								</div>	
 							</div>		            
@@ -230,28 +405,10 @@
 					</div>
 					<div class="col-md-4">
 						
-<img src="<%=request.getContextPath()%>/fotos/foto1.png"/>
-<img src="<%=request.getContextPath()%>/fotos/foto2.png"/>
-<img src="<%=request.getContextPath()%>/fotos/foto3.png"/>
-<img src="<%=request.getContextPath()%>/fotos/foto4.png"/>
-
-							<p:commandLink id="showGalleria" onclick="PF('dlgGalleria').show()">
-								<p:galleria id="fotoGalleria" value="" var="foto" panelWidth="180" panelHeight="1"  
-								            frameWidth="48" frameHeight="48" effect="clip">  
-								  
-									<p:graphicImage id="fotoImage" value=""
-										alt="" title="" cache="false">
-										<f:param name="photo_id" value=""/>
-									</p:graphicImage>	
-								      
-								    <f:facet name="content">  
-								        <h:panelGrid  columns="2" cellpadding="5">  
-								            								             
-								        </h:panelGrid>  
-								    </f:facet>  
-								  
-								</p:galleria>  					
-							</p:commandLink>
+<a href="#" id="dlg-foto1-open"><img src="<%=request.getContextPath()%>/fotos/thumb1.jpg"/></a>
+<a href="#" id="dlg-foto2-open"><img src="<%=request.getContextPath()%>/fotos/thumb2.jpg"/></a>
+<a href="#" id="dlg-foto3-open"><img src="<%=request.getContextPath()%>/fotos/thumb3.jpg"/></a>
+<a href="#" id="dlg-foto4-open"><img src="<%=request.getContextPath()%>/fotos/thumb4.jpg"/></a>
 												
 					</div>
 					
@@ -265,7 +422,7 @@
 				
 				<div class="row">
 					<div class="col-md-12">
-						<div class="fms-vorgangsangaben-row">Sie parkten im Bereich eines Parkscheinautomaten ohne gültigen Parkschein.&lt;BR /&gt;§ 13 Abs. 1, 2, § 49 StVO; § 24 StVG; 63.1 BKat</div>
+						<div class="fms-vorgangsangaben-row" style="height: 120px;">Sie parkten im Bereich eines Parkscheinautomaten ohne gültigen Parkschein.<br>§ 13 Abs. 1, 2, § 49 StVO; § 24 StVG; 63.1 BKat</div>
 					</div>
 				</div>
 				
@@ -315,10 +472,10 @@
 	
 			<div class="row">
 			     <div class="col-md-3 col-sm-3 col-xs-12">	
-				<button id="cancel" value="Abbrechen" style="width: 100%;" action="cancel" immediate="true"/>
+				<button id="cancel" value="Abbrechen" style="width: 100%;" action="cancel" immediate="true">Abbrechen</button>
 			     </div>			 
 				<div class="text-right col-md-offset-6 col-md-2 col-sm-2 col-xs-12">
-				  <button id="next" action="next" value="Weiter" style="width: 100%;" update="@form"/>
+				  <button id="next" action="next" value="Weiter" style="width: 100%;">Weiter</button>
 		             </div>		  
 			</div>
 					
