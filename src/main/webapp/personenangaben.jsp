@@ -41,17 +41,23 @@
 	} catch (UnknownHostException e) {
 		System.out.println("Couldn't connect to MongoDB: " + e.getMessage() + " :: " + e.getClass() + " with " + mongoHost + ":" + port + " " + mongoUser + " " + mongoPassword );
 		dbFailed = true;
+	} catch (Exception ex) {
+	  	dbFailed = true;
 	}
-	
+
 	if ( !dbFailed ) {
 	
 	mongoDB = mongo.getDB(mongoDBName);
 	
+	try {	
 	if (mongoDB.authenticate(mongoUser, mongoPassword.toCharArray()) == false) {
 		System.out.println("Failed to authenticate DB with " + mongoUser + " " + mongoPassword );
 		dbFailed = true;
 	}
-	
+	} catch (Exception ex) {
+	  	dbFailed = true;
+	} 
+
 	if ( !dbFailed ) {
 
 	DBCollection fotosCollection = mongoDB.getCollection("fotos");
